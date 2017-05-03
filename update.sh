@@ -8,8 +8,12 @@ git rm  --ignore-unmatch [--] $(git ls-files -d)
 echo "git status:"
 git status
 
-echo -n "Enter the Description for the Change: " [Minor Update]
-read CHANGE_MSG
-git commit -m "${CHANGE_MSG}"
+echo "Please enter the commit message:"   
+read MSG
+git commit -m "${MSG}"
+echo "commiting..."
 
+echo "pushing..."
 git push origin master
+
+echo "push done!"

@@ -1,4 +1,6 @@
 #!/bin/sh
+CUR_DIR=$(pwd)
+cd /home/robot/idao/test/
 
 git pull origin master
 git add $(git ls-files -o)
@@ -9,11 +11,19 @@ echo "git status:"
 git status
 
 echo "Please enter the commit message:"   
-read MSG
-git commit -m "${MSG}"
+read COMMIT_MESSAGE
+
+#if[ "$COMMIT_MESSAGE" == "" ]
+#then
+#    COMMIT_MESSAGE = "some update"
+#fi
+
+git commit -m "${COMMIT_MESSAGE}"
 echo "commiting..."
 
 echo "pushing..."
 git push origin master
+
+cd $CUR_DIR
 
 echo "push done!"

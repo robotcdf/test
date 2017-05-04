@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 CUR_DIR=$(pwd)
 cd /home/robot/idao/test/
 
@@ -13,17 +13,16 @@ git status
 echo "Please enter the commit message:"   
 read COMMIT_MESSAGE
 
-#if[ "$COMMIT_MESSAGE" == "" ]
-#then
-#    COMMIT_MESSAGE = "some update"
-#fi
+if [ "$COMMIT_MESSAGE" == "" ] ; then
+    COMMIT_MESSAGE = "some update"
+fi
 
+echo "commiting------->>>>>>>>>>"
 git commit -m "${COMMIT_MESSAGE}"
-echo "commiting..."
 
-echo "pushing..."
+echo "pushing--------->>>>>>>>>"
 git push origin master
 
 cd $CUR_DIR
 
-echo "push done!"
+echo "push done------->>>>>>>>>"

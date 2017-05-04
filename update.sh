@@ -15,7 +15,7 @@ git status
 echo "Please enter the commit message:"   
 read COMMIT_MESSAGE
 
-if [ "x$COMMIT_MESSAGE" == "x" ] ; then
+if [ "$COMMIT_MESSAGE" == "" ] ; then
 #COMMIT_MESSAGE = "some update"
 export COMMIT_MESSAGE="some update"
     echo "${COMMIT_MESSAGE}"

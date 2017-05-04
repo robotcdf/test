@@ -3,6 +3,8 @@ CUR_DIR=$(pwd)
 cd /home/robot/idao/test/
 
 git pull origin master
+echo "pull done----------->>>>>>>>>" 
+
 git add $(git ls-files -o)
 git add $(git ls-files -m)
 git rm  --ignore-unmatch [--] $(git ls-files -d)
@@ -13,8 +15,10 @@ git status
 echo "Please enter the commit message:"   
 read COMMIT_MESSAGE
 
-if [ "$COMMIT_MESSAGE" == "" ] ; then
-    COMMIT_MESSAGE = "some update"
+if [ "x$COMMIT_MESSAGE" == "x" ] ; then
+#COMMIT_MESSAGE = "some update"
+export COMMIT_MESSAGE="some update"
+    echo "${COMMIT_MESSAGE}"
 fi
 
 echo "commiting------->>>>>>>>>>"

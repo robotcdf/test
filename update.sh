@@ -1,6 +1,6 @@
 #!/bin/bash
 CUR_DIR=$(pwd)
-cd /home/robot/idao/test/
+cd ~/idao/test/
 
 git pull origin master
 
